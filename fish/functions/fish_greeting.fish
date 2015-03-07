@@ -1,3 +1,7 @@
 function fish_greeting
-  fortune -s
+  which fortune > /dev/null
+  switch $status
+    case 0
+      fortune -s
+  end
 end
