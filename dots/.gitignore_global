@@ -1,0 +1,19 @@
+*~
+.DS_Store
+
+# Sublime Files
+*.sublime-project
+*.sublime-workspace
+sftp-config.json
+
+# Atom Files
+deployment-config.json
+
+# PHPStorm Files
+.idea
+
+# Node files
+node_modules/
+*.log
+nodemon.json
+.vagrant/

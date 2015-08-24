@@ -1,0 +1,56 @@
+#!/usr/bin/env bash
+
+# Make sure we’re using the latest Homebrew
+brew update
+
+# Upgrade any already-installed formulae
+brew upgrade
+
+# Add taps
+brew tap homebrew/dupes
+brew tap homebrew/versions
+
+# Install GNU core utilities (those that come with OS X are outdated)
+brew install coreutils
+echo "Don’t forget to add $(brew --prefix coreutils)/libexec/gnubin to \$PATH."
+
+# Install GNU `find`, `locate`, `updatedb`, and `xargs`, g-prefixed
+brew install findutils
+
+# install shells
+brew install bash
+brew install zsh
+
+# Install version control
+brew install git
+brew install hg # for golang
+
+# Install more recent versions of some OS X tools
+brew install vim --override-system-vi
+brew install homebrew/dupes/grep
+brew install homebrew/dupes/openssh
+brew install homebrew/dupes/screen
+
+brew install wget
+brew install ack
+
+# languages
+brew install node010
+brew install python
+brew install go
+
+# dev / deploy tools
+brew install ansible
+brew install boot2docker
+
+# Install other useful binaries
+brew install hub
+brew install jq # cmd line json parser
+brew install tree
+brew install webkit2png
+
+# fun stuff
+brew install fortune
+
+# Remove outdated versions from the cellar
+brew cleanup
