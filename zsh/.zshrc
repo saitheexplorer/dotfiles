@@ -17,9 +17,12 @@ antigen bundle z
 
 # Syntax highlighting bundle.
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle history-substring-search
 
 # Load the theme.
 antigen theme robbyrussell
 
 # Tell antigen that you're done.
 antigen apply
+
+alias s='subl .'
