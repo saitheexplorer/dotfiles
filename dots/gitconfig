@@ -1,0 +1,68 @@
+[user]
+	name = Sai Gunturi
+	email = sai@nectarom.com
+[alias]
+  a = add
+  aa = add *
+  ap = add -p
+  b = branch
+  ba = branch -a
+  bd = branch -d
+  br = branch -r
+  c = commit --verbose
+  ca = commit -a
+  cam = commit -am
+  cm = commit -m
+  co = checkout
+  cob = checkout -b
+  finish = !git rebase -i $(git merge-base HEAD master)
+  initc = !git init && git commit --allow-empty -m 'Initial commit.' --allow-empty
+  ksreview = "!f() { local SHA=${1:-HEAD}; local BRANCH=${2:-master}; if [ $SHA == $BRANCH ]; then SHA=HEAD; fi; git difftool -y -t Kaleidoscope $BRANCH...$SHA; }; f"
+  ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+  ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+  m = commit --amend --verbose
+  mn = commit --amend --no-edit
+  patch = add --patch
+  prod = !git checkout production && git merge master && git push && git checkout master
+  publish = push -u origin HEAD
+  pullr = pull --rebase
+  pushf = push -f
+  pusht = !git push && git push --tags
+  rb = rebase
+  st = status
+  undo = reset HEAD@{1}
+[core]
+	excludesfile = ~/.gitignore_global
+  autoclrf = input
+	editor = subl -nw
+[difftool "kaleidoscope"]
+	cmd = /usr/local/bin/ksdiff -w "$LOCAL" "$REMOTE"
+	path = /usr/local/bin/ksdiff
+[mergetool "kaleidoscope"]
+	cmd = /usr/local/bin/ksdiff --merge --output "$MERGED" --base "$BASE" -- "$LOCAL" --snapshot "$REMOTE" --snapshot
+	trustExitCode = true
+[push]
+	default = simple
+[difftool "Kaleidoscope"]
+	cmd = ksdiff --partial-changeset --relative-path "$MERGED" -- "$LOCAL" "$REMOTE"
+[diff]
+	tool = Kaleidoscope
+[difftool]
+	prompt = false
+[mergetool "Kaleidoscope"]
+	cmd = ksdiff --merge --output "$MERGED" --base "$BASE" -- "$LOCAL" --snapshot "$REMOTE" --snapshot
+	trustExitCode = true
+[mergetool]
+	prompt = false
+[merge]
+	tool = Kaleidoscope
+[color]
+	ui = true
+[difftool "sourcetree"]
+	cmd = /usr/local/bin/ksdiff -w "$LOCAL" "$REMOTE"
+	path =
+[mergetool "sourcetree"]
+	cmd = /usr/local/bin/ksdiff --merge --output "$MERGED" --base "$BASE" -- "$LOCAL" --snapshot "$REMOTE" --snapshot
+	trustExitCode = true
+[fetch]
+	prune = true

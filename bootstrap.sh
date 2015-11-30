@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+git clone --recursive https://github.com/sorin-ionescu/prezto.git $HOME/.zprezto
 
 DIR=$HOME/Dropbox/dotfiles
 
@@ -8,11 +9,11 @@ ZSHFILES=$DIR/zsh
 ZSHDIR=$HOME
 
 for file in `ls -A $DOTFILES`; do
-  rm -rf $HOME/$file
-  ln -s $DOTFILES/$file $HOME/$file
+  rm -rf $HOME/.$file
+  echo "Linking .$file..."
+  ln -s $DOTFILES/$file $HOME/.$file
 done
 
-for file in `ls -A $ZSHFILES`; do
-  rm -rf $ZSHDIR/$file
-  ln -s $ZSHFILES/$file $ZSHDIR/$file
-done
+$HOME/.osx
+$HOME/.brew
+$HOME/.cask
