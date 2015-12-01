@@ -1,0 +1,10 @@
+MODULES=(
+  mkdirp
+  nodemon
+  npmrc
+  webpack
+)
+
+for module in $MODULES; do
+  npm install -g $module
+done

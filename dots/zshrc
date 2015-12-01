@@ -1,9 +1,11 @@
+export PATH=/usr/local/bin:$(brew --prefix coreutils)/libexec/gnubin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
 export NVM_DIR=~/.nvm
 
 source $HOME/.zprezto/init.zsh
 source $(brew --prefix)/etc/profile.d/z.sh
 source $(brew --prefix nvm)/nvm.sh
 
+alias ll='tree -L 2'
 alias s='subl .'
 alias n='cd ~/Nectar && ls'
 alias dot='cd ~/Dropbox/dotfiles'
