@@ -39,6 +39,7 @@ brew install hub
 brew install jq # cmd line json parser
 brew install tree
 brew install webkit2png
+brew install nmap
 
 # fun stuff
 brew install fortune

@@ -8,4 +8,7 @@ source $(brew --prefix nvm)/nvm.sh
 alias ll='tree -L 2'
 alias s='subl .'
 alias n='cd ~/Nectar && ls'
-alias dot='cd ~/Dropbox/dotfiles'
+alias dot='cd ~/Dropbox/dotfiles && s'
+alias m='git checkout master && git pull'
+
+setopt CLOBBER

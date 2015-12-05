@@ -17,4 +17,4 @@ done
 $HOME/.osx
 $HOME/.brew
 $HOME/.cask
-$HOME/.npm
+$HOME/.node
