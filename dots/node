@@ -2,6 +2,7 @@ MODULES=(
   mkdirp
   nodemon
   npmrc
+  serve
   webpack
 )
 
