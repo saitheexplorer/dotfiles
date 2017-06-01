@@ -1,10 +1,10 @@
 *~
 .DS_Store
 
+# Vim Files
+*.swp
+
 # Sublime Files
-*.sublime-project
-*.sublime-workspace
-sftp-config.json
 
 # Atom Files
 deployment-config.json
