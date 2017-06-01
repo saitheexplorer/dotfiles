@@ -1,0 +1,77 @@
+syntax enable
+colorscheme monokai
+filetype plugin on
+set guifont=Menlo\ Regular:h15
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-sensible'
+Plug 'flazz/vim-colorschemes'
+Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/syntastic'
+Plug 'tomtom/tcomment_vim'
+Plug 'kien/ctrlp.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'Townk/vim-autoclose'
+
+" Snippets
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+
+" Git
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+
+" NERDTree
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'jistr/vim-nerdtree-tabs'
+
+" Colors
+Plug 'flazz/vim-colorschemes'
+Plug 'crusoexia/vim-monokai'
+
+" Syntax - JavaScript
+" Plug 'pangloss/vim-javascript'
+" Plug 'crusoexia/vim-javascript-lib'
+Plug 'neoclide/vim-jsx-improve'
+" Plug 'flowtype/vim-flow'
+
+" Syntax - Golang
+Plug 'fatih/vim-go'
+
+" Syntax - JSON
+Plug 'elzr/vim-json'
+
+" Syntax - Terraform
+Plug 'hashivim/vim-terraform'
+
+call plug#end()
+
+let NERDTreeMinimalUI = 1
+let g:nerdtree_tabs_open_on_console_startup = 1
+let g:NERDTreeIgnore=['node_modules', 'vendor', '\.git', '\.swp$']
+let NERDTreeShowHidden=1
+
+let g:javascript_plugin_flow = 1
+
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|coverage\|build'
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:vim_json_syntax_conceal = 0
+
+:inoremap jj <Esc>
+:map <C-s> :w<CR>
+:map <C-t><up> :tabr<cr>
+:map <C-t><down> :tabl<cr>
+:map <C-t><left> :tabp<cr>
+:map <C-t><right> :tabn<cr>
+:map qq :qall<CR>
