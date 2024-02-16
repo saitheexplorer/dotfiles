@@ -13,8 +13,3 @@ for file in `ls -A $DOTFILES`; do
   echo "Linking .$file..."
   ln -s $DOTFILES/$file $HOME/.$file
 done
-
-$HOME/.osx
-$HOME/.brew
-$HOME/.cask
-$HOME/.node
