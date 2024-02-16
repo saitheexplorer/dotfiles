@@ -4,14 +4,6 @@
 # Vim Files
 *.swp
 
-# Sublime Files
-
-# Atom Files
-deployment-config.json
-
-# PHPStorm Files
-.idea
-
 # Node files
 node_modules/
 *.log
