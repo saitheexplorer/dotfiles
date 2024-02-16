@@ -1,6 +1,7 @@
 [user]
 	name = Sai Gunturi
-	email = sai@nectarom.com
+	email = sai.gunturi@gmail.com
+	signingkey = 6CA759A1E8F63A66
 [alias]
   a = add
   aa = add *
@@ -22,6 +23,7 @@
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   m = commit --amend --verbose
   mn = commit --amend --no-edit
+  mnn = commit --amend --no-edit --no-verify
   patch = add --patch
   prod = !git checkout production && git merge master && git push && git checkout master
   publish = push -u origin HEAD
@@ -29,12 +31,15 @@
   pushf = push -f
   pusht = !git push && git push --tags
   rb = rebase
+  rbc = rebase --continue
+  rba = rebase --abort
   st = status
   undo = reset HEAD@{1}
+  wip = commit --no-verify --message "WIP."
 [core]
 	excludesfile = ~/.gitignore_global
   autoclrf = input
-	editor = subl -nw
+	editor = code --wait
 [difftool "kaleidoscope"]
 	cmd = /usr/local/bin/ksdiff -w "$LOCAL" "$REMOTE"
 	path = /usr/local/bin/ksdiff
@@ -66,3 +71,5 @@
 	trustExitCode = true
 [fetch]
 	prune = true
+[init]
+	defaultBranch = main
