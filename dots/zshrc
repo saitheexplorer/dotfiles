@@ -20,7 +20,7 @@ alias ll='tree -L 2'
 alias m='git checkout master && git pull'
 alias mkdirp='mkdir -p'
 alias p='cd ~/Projects && ls'
-alias c='code .'
+alias c="$EDITOR ."
 
 export GOPATH=$HOME/gocode
 export GOBIN=$GOPATH/bin
