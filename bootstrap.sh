@@ -1,15 +1,9 @@
 #!/usr/bin/env bash
-git clone --recursive https://github.com/sorin-ionescu/prezto.git $HOME/.zprezto
 
-DIR=$HOME/Dropbox/dotfiles
-
+DIR=$HOME/dotfiles
 DOTFILES=$DIR/dots
-ZSHFILES=$DIR/zsh
 
-ZSHDIR=$HOME
-
-for file in `ls -A $DOTFILES`; do
-  rm -rf $HOME/.$file
+for file in "$DOTFILES"/*; do
   echo "Linking .$file..."
-  ln -s $DOTFILES/$file $HOME/.$file
+  ln -s "$file" "$HOME/.$(basename $file)"
 done
