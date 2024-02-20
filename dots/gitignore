@@ -6,6 +6,9 @@
 
 # Node files
 node_modules/
-*.log
 nodemon.json
+
+# Other
 .vagrant/
+*.log
+.vscode/

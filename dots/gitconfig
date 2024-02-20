@@ -2,6 +2,7 @@
 	name = Sai Gunturi
 	email = sai.gunturi@gmail.com
 	signingkey = 6CA759A1E8F63A66
+
 [alias]
   a = add
   aa = add *
@@ -18,7 +19,6 @@
   cob = checkout -b
   finish = !git rebase -i $(git merge-base HEAD master)
   initc = !git init && git commit --allow-empty -m 'Initial commit.' --allow-empty
-  ksreview = "!f() { local SHA=${1:-HEAD}; local BRANCH=${2:-master}; if [ $SHA == $BRANCH ]; then SHA=HEAD; fi; git difftool -y -t Kaleidoscope $BRANCH...$SHA; }; f"
   ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
   ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
   m = commit --amend --verbose
@@ -36,40 +36,90 @@
   st = status
   undo = reset HEAD@{1}
   wip = commit --no-verify --message "WIP."
+
 [core]
-	excludesfile = ~/.gitignore_global
   autoclrf = input
 	editor = code --wait
-[difftool "kaleidoscope"]
-	cmd = /usr/local/bin/ksdiff -w "$LOCAL" "$REMOTE"
-	path = /usr/local/bin/ksdiff
-[mergetool "kaleidoscope"]
-	cmd = /usr/local/bin/ksdiff --merge --output "$MERGED" --base "$BASE" -- "$LOCAL" --snapshot "$REMOTE" --snapshot
-	trustExitCode = true
+
+  # Use custom `.gitignore`.
+  excludesfile = ~/.gitignore
+
+  # Treat spaces before tabs and all kinds of trailing whitespace as an error.
+  # [default] trailing-space: looks for spaces at the end of a line
+  # [default] space-before-tab: looks for spaces before tabs at the beginning of a line
+  whitespace = space-before-tab,-indent-with-non-tab,trailing-space
+
+  # Make `git rebase` safer on macOS.
+  # More info: <http://www.git-tower.com/blog/make-git-rebase-safe-on-osx/>
+  trustctime = false
+
+  # Prevent showing files whose names contain non-ASCII symbols as unversioned.
+  # http://michael-kuehnel.de/git/2014/11/21/git-mac-osx-and-german-umlaute.html
+  precomposeunicode = false
+
+  # Speed up commands involving untracked files such as `git status`.
+  # https://git-scm.com/docs/git-update-index#_untracked_cache
+  untrackedCache = true
+
 [push]
+	# https://git-scm.com/docs/git-config#git-config-pushdefault
 	default = simple
-[difftool "Kaleidoscope"]
-	cmd = ksdiff --partial-changeset --relative-path "$MERGED" -- "$LOCAL" "$REMOTE"
-[diff]
-	tool = Kaleidoscope
-[difftool]
-	prompt = false
-[mergetool "Kaleidoscope"]
-	cmd = ksdiff --merge --output "$MERGED" --base "$BASE" -- "$LOCAL" --snapshot "$REMOTE" --snapshot
-	trustExitCode = true
-[mergetool]
-	prompt = false
-[merge]
-	tool = Kaleidoscope
+	# Make `git push` push relevant annotated tags when pushing branches out.
+	followTags = true
+
 [color]
-	ui = true
-[difftool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff -w "$LOCAL" "$REMOTE"
-	path =
-[mergetool "sourcetree"]
-	cmd = /usr/local/bin/ksdiff --merge --output "$MERGED" --base "$BASE" -- "$LOCAL" --snapshot "$REMOTE" --snapshot
-	trustExitCode = true
+	ui = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
 [fetch]
 	prune = true
+
 [init]
 	defaultBranch = main
+
+[pull]
+	ff = only
+
+[diff]
+	# Detect copies as well as renames.
+	renames = copies
+
+[diff "bin"]
+	# Use `hexdump` to diff binary files.
+	textconv = hexdump -v -C
+
+[help]
+	# Automatically correct and execute mistyped commands.
+	autocorrect = 1
+
+# URL shorthands
+[url "git@github.com:"]
+	insteadOf = "gh:"
+	pushInsteadOf = "github:"
+	pushInsteadOf = "git://github.com/"
+
+[url "git://github.com/"]
+	insteadOf = "github:"
+
+[url "git@gist.github.com:"]
+	insteadOf = "gst:"
+	pushInsteadOf = "gist:"
+	pushInsteadOf = "git://gist.github.com/"
+
+[url "git://gist.github.com/"]
+	insteadOf = "gist:"
