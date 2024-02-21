@@ -42,4 +42,8 @@ setopt EXTENDED_GLOB
 setopt CLOBBER
 set -k
 
+autoload -U +X compinit && compinit
+autoload -U +X bashcompinit && bashcompinit
+source /usr/local/etc/bash_completion.d
+
 uptime
