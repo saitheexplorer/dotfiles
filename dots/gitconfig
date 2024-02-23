@@ -142,3 +142,4 @@
 [rebase]
 	missingCommitsCheck = error
 	updateRefs = true
+	autostash = true
