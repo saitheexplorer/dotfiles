@@ -74,6 +74,7 @@
 	default = simple
 	# Make `git push` push relevant annotated tags when pushing branches out.
 	followTags = true
+	autoSetupRemote = true
 
 [color]
 	ui = auto
@@ -106,6 +107,8 @@
 [diff]
 	# Detect copies as well as renames.
 	renames = copies
+  colorMoved = default
+	algorithm = histogram
 
 [diff "bin"]
 	# Use `hexdump` to diff binary files.
@@ -131,3 +134,11 @@
 
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
+[merge]
+	conflictStyle = zdiff3
+	tool = meld
+[branch]
+	sort = -committerdate
+[rebase]
+	missingCommitsCheck = error
+	updateRefs = true
