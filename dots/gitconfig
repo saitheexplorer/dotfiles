@@ -40,6 +40,7 @@
 [core]
   autoclrf = input
 	editor = code --wait
+  pager = delta
 
   # Use custom `.gitignore`.
   excludesfile = ~/.gitignore
@@ -60,6 +61,13 @@
   # Speed up commands involving untracked files such as `git status`.
   # https://git-scm.com/docs/git-update-index#_untracked_cache
   untrackedCache = true
+
+[interactive]
+    diffFilter = delta --color-only
+
+[delta]
+    navigate = true    # use n and N to move between diff sections
+    light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
 
 [push]
 	# https://git-scm.com/docs/git-config#git-config-pushdefault
