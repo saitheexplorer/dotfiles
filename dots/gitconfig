@@ -137,11 +137,24 @@
 
 [url "git://gist.github.com/"]
 	insteadOf = "gist:"
+
+[url "git@gitlab.com:"]
+	insteadOf = "gl:"
+	pushInsteadOf = "gitlab:"
+	pushInsteadOf = "git://gitlab.com/"
+
+[url "git@bitbucket.org:"]
+	insteadOf = "bb:"
+	pushInsteadOf = "bitbucket:"
+	pushInsteadOf = "git://bitbucket.org/"
+
 [merge]
 	conflictStyle = zdiff3
 	tool = meld
+
 [branch]
 	sort = -committerdate
+	
 [rebase]
 	missingCommitsCheck = error
 	updateRefs = true
