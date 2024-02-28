@@ -22,11 +22,18 @@ ln -s "${BREW_PREFIX}/bin/gsha256sum" "${BREW_PREFIX}/bin/sha256sum"
 brew install bash
 brew install zsh
 
-# CLI tools
+# Git stuff
 brew install git
 brew install git-delta
+
+# CLI tools
+brew install ack
+brew install bat
+brew install gnu-sed
 brew install grep
 brew install jq
+brew install openssh
+brew install screen
 brew install tree
 brew install wget
 brew install z
