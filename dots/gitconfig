@@ -3,6 +3,9 @@
 	email = sai.gunturi@gmail.com
 	signingkey = 6CA759A1E8F63A66
 
+[includeIf "gitdir:~/NovaNav/"]
+    path = ~/NovaNav/.gitconfig
+
 [alias]
 	a = add
 	aa = add *
