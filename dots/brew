@@ -36,7 +36,8 @@ brew install openssh
 brew install screen
 brew install tree
 brew install wget
-brew install z
+brew install zoxide
+brew install fzf
 
 # Languages
 brew install node
