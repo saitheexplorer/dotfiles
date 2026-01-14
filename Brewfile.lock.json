@@ -1,0 +1,35 @@
+{
+  "entries": {
+    "vscode": {
+      "be5invis.toml": null,
+      "davidanson.vscode-markdownlint": null,
+      "dbaeumer.vscode-eslint": null,
+      "dkundel.vscode-new-file": null,
+      "eamodio.gitlens": null,
+      "editorconfig.editorconfig": null,
+      "esbenp.prettier-vscode": null,
+      "file-icons.file-icons": null,
+      "golang.go": null,
+      "graphql.vscode-graphql-syntax": null,
+      "graphql.vscode-graphql": null,
+      "hashicorp.terraform": null,
+      "mikestead.dotenv": null,
+      "ms-vscode.sublime-keybindings": null,
+      "sahmed.terraform-comments-beautifier": null,
+      "timonwong.shellcheck": null,
+      "wayou.vscode-todo-highlight": null
+    }
+  },
+  "system": {
+    "macos": {
+      "sonoma": {
+        "HOMEBREW_VERSION": "4.2.10",
+        "HOMEBREW_PREFIX": "/opt/homebrew",
+        "Homebrew/homebrew-core": "api",
+        "CLT": "15.1.0.0.1.1700200546",
+        "Xcode": "15.1",
+        "macOS": "14.3.1"
+      }
+    }
+  }
+}

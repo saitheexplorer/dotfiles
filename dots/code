@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+code --locale en-US
+
+# Key bindings
+code --install-extension "ms-vscode.sublime-keybindings"
+code --install-extension "editorconfig.editorconfig"
+
+# Language & syntax support
+code --install-extension "graphql.vscode-graphql-syntax"
+code --install-extension "be5invis.toml"
+code --install-extension "golang.go"
+code --install-extension "mikestead.dotenv"
+code --install-extension "hashicorp.terraform"
+code --install-extension "graphql.vscode-graphql"
+
+# Linters & formatters
+code --install-extension "timonwong.shellcheck"
+code --install-extension "davidanson.vscode-markdownlint"
+code --install-extension "esbenp.prettier-vscode"
+code --install-extension "dbaeumer.vscode-eslint"
+
+# Visual
+code --install-extension "file-icons.file-icons"
+code --install-extension "sahmed.terraform-comments-beautifier"
+code --install-extension "wayou.vscode-todo-highlight"
+
+# Other
+code --install-extension "dkundel.vscode-new-file"
+code --install-extension "eamodio.gitlens"

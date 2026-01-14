@@ -21,6 +21,8 @@ alias m='git checkout master && git pull'
 alias mkdirp='mkdir -p'
 alias p='cd ~/Projects && ls'
 alias c="$EDITOR ."
+alias kh="$EDITOR ~/.ssh/known_hosts"
+alias t='code ~/Documents/TODO.txt'
 
 export GOPATH=$HOME/gocode
 export GOBIN=$GOPATH/bin
@@ -30,9 +32,12 @@ export PATH=/opt/homebrew/bin:$PATH
 export PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=~/bin:$PATH
+export PATH=~/.local/bin:$PATH
 export PATH=$GOBIN:$PATH
 export PATH=$GOROOT/bin:$PATH
-export PATH=/usr/local/opt/python/libexec/bin:$PATH
+export PATH=/opt/homebrew/opt/python@3.12/libexec/bin:$PATH
+export PATH=/opt/homebrew/opt/libpq/bin:$PATH
+export PATH=~/NovaNav/bin:$PATH
 
 setopt EXTENDED_GLOB
 setopt CLOBBER
@@ -50,3 +55,7 @@ eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 
 uptime
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

@@ -10,8 +10,9 @@
 	a = add
 	aa = add *
 	ap = add -p
-	b = branch
+	b = branch --sort=-committerdate
 	ba = branch -a
+	bc = !git branch --show-current | pbcopy
 	bd = branch -d
 	br = branch -r
 	c = commit --verbose
@@ -20,7 +21,7 @@
 	cm = commit -m
 	co = checkout
 	cob = checkout -b
-	finish = !git rebase -i $(git merge-base HEAD master)
+	finish = !git rebase -i $(git merge-base HEAD main)
 	initc = !git init && git commit --allow-empty -m 'Initial commit.' --allow-empty
 	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
 	ls = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
@@ -28,7 +29,7 @@
 	mn = commit --amend --no-edit
 	mnn = commit --amend --no-edit --no-verify
 	patch = add --patch
-	prod = !git checkout production && git merge master && git push && git checkout master
+	prod = !git checkout production && git merge main && git push && git checkout main
 	publish = push -u origin HEAD
 	pullr = pull --rebase
 	pushf = push -f
@@ -159,3 +160,8 @@
 	missingCommitsCheck = error
 	updateRefs = true
 	autostash = true
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true

@@ -1,0 +1,5 @@
+# Pane navigation
+keybind = super+right=next_tab
+keybind = super+left=previous_tab
+selection-clear-on-copy = true
+copy-on-select = true

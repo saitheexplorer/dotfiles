@@ -12,3 +12,7 @@ nodemon.json
 .vagrant/
 *.log
 .vscode/
+
+# Claude
+CLAUDE.md
+.claude/

@@ -43,6 +43,9 @@ brew install fzf
 brew install node
 brew install python
 
+# Databases
+brew install postgresql@16
+
 # Helpers
 brew install gh
 brew install hugo
@@ -51,6 +54,10 @@ brew install terraform
 # Cloud provider CLIs
 brew install awscli
 brew install azure-cli
+
+# Music stuff
+brew install yt-dlp
+brew install ffmpeg
 
 # Apps
 brew install --cask 1password
